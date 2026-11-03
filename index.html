@@ -2135,10 +2135,11 @@ const toggleMode = () => setMode(getMode() === 'dark' ? 'light' : 'dark');
 /* ---------- Doors: hover cracks a door open; click swings it open and carries you through it ---------- */
 (function doors(){
   // each door is its own page (/photographer etc.)
-  const ROUTES = ['social-media.html', 'ads-design.html', 'branding.html', 'typography.html', ''];
-  const SLUGS = ['social-media', 'ads-design', 'branding', 'typography', ''];
-  // a link like …#photographer lands at the doors and walks straight through that one
-  const HASH_DOOR = SLUGS.indexOf(decodeURIComponent(location.hash.slice(1)));
+  const ROUTES = ['social-media.html', 'ads-design.html', 'branding.html', 'typography.html'];
+  const SLUGS = ['social-media', 'ads-design', 'branding', 'typography'];
+  // a link like …#social-media lands at the doors and walks straight through that one
+  const hashVal = decodeURIComponent(location.hash.slice(1));
+  const HASH_DOOR = hashVal ? SLUGS.indexOf(hashVal) : -1;
   if (HASH_DOOR >= 0){
     try { history.replaceState(null, '', location.pathname + location.search + '#works'); } catch (e) {}
     addEventListener('intro:ready', () => { warm(HASH_DOOR); setTimeout(() => window.openDoor(HASH_DOOR), 650); }, { once: true });
@@ -2609,14 +2610,14 @@ if (['#works', '#about', '#contact'].includes(location.hash)){
 
 /* ---------- Clean routes: the address bar reads #works or #about as you move through the page ---------- */
 (() => {
-  if (!true || location.protocol === 'file:') return;
-  const dir = location.pathname.replace(/[^/]*$/, '');
-  const ROUTE = { home: 'home.html', works: 'home.html#works', about: 'home.html#about' };
+  if (location.protocol === 'file:') return;
   let cur = '';
   const set = name => {
     if (name === cur || (history.state && history.state.wall)) return;
     cur = name;
-    try { history.replaceState(history.state, '', dir + ROUTE[name]); } catch (e) {}
+    const cleanBase = location.pathname.replace(/index\.html$|home\.html$/, '');
+    const newUrl = name === 'home' ? (cleanBase || '/') : (cleanBase || '/') + '#' + name;
+    try { history.replaceState(history.state, '', newUrl); } catch (e) {}
   };
   const first = location.hash === '#about' ? 'about' : location.hash === '#works' ? 'works' : 'home';
   addEventListener('intro:ready', () => {
