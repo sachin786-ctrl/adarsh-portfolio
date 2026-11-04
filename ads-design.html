@@ -112,20 +112,23 @@ html[data-mode="dark"] .stage::after{background:radial-gradient(closest-side,rgb
 .outro p{font-size:15px;color:rgba(var(--fg-rgb),.55);margin-bottom:18px}
 
 @media (max-width:899.98px){
-  .card{top:calc(var(--nav-h,64px) + 10px + var(--i) * 10px);border-radius:22px}
-  /* phones: each card fits one screen, desktop on top, the essentials below */
-  .card__in{padding:16px 18px 20px;min-height:auto;gap:4px;max-height:calc(100svh - var(--nav-h,64px) - 40px)}
-  .stage{order:-1;padding:4px 6% 18px}
-  .card__meta{margin-bottom:8px;font-size:11px}
-  .card h2{font-size:26px;margin-bottom:4px}
-  .card .sub{font-size:13px;margin-bottom:10px}
-  .card .desc{font-size:14px;line-height:1.5;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .tags{display:none}
-  .live{height:44px;padding:0 18px;font-size:13px}
-  .card__in{--w:clamp(150px,calc((100svh - var(--nav-h,64px) - 370px) * .47),230px)}
-  .phone,.card.flip .phone{transform:rotateY(-14deg) rotateX(4deg) rotateZ(.6deg)}
-  .card.flip .phone__body::before{right:0;left:auto;transform-origin:100% 50%;transform:rotateY(-90deg)}
-  .app{margin-bottom:10px;gap:12px}.app img{width:42px;height:42px;border-radius:10px}
+  .stack{padding-bottom:6vh}
+  .card{position:relative!important;top:auto!important;margin-bottom:28px;border-radius:24px;box-shadow:0 8px 30px rgba(0,0,0,.15)}
+  /* phones: clean feed layout, full un-cropped ad preview, natural scrolling */
+  .card__in{padding:20px 16px 22px;min-height:auto;max-height:none;gap:16px;display:flex;flex-direction:column}
+  .stage{order:-1;padding:0;perspective:none}
+  .card__meta{margin-bottom:6px;font-size:11px}
+  .card h2{font-size:clamp(22px,6vw,28px);margin-bottom:6px;line-height:1.15}
+  .card .sub{font-size:13.5px;margin-bottom:10px}
+  .card .desc{font-size:14px;line-height:1.55;margin-bottom:14px;display:block;-webkit-line-clamp:unset;overflow:visible}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .tags li{padding:5px 11px;font-size:12px}
+  .live{height:42px;padding:0 16px;font-size:13px}
+  .card__in{--w:min(260px,70vw)}
+  .phone,.card.flip .phone{transform:none!important;margin-inline:auto}
+  .phone__body::before{display:none}
+  .stage::after{display:none}
+  .app{margin-bottom:10px;gap:12px}.app img{width:44px;height:44px;border-radius:10px}
 }
 @media (prefers-reduced-motion:reduce){
   .glow{display:none}
@@ -483,7 +486,7 @@ if (!stack.firstElementChild) stack.innerHTML = PROJECTS.map((p, i) => `
         <div class="phone"><div class="phone__body">
           <i class="phone__btn l" style="top:19%;height:4%"></i><i class="phone__btn l" style="top:26%;height:7.5%"></i><i class="phone__btn l" style="top:35%;height:7.5%"></i><i class="phone__btn r" style="top:28%;height:11%"></i>
           <div class="phone__screen" style="background-image:url(${p.lqip})">
-            ${p.video ? `<video muted loop playsinline preload="metadata" poster="${p.poster}" src="${p.video}"></video>` : `<img src="${p.poster}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:2.2rem;">`}
+            ${p.video ? `<video muted loop playsinline preload="metadata" poster="${p.poster}" src="${p.video}"></video>` : `<img src="${p.poster}" alt="" style="width:100%;height:100%;object-fit:contain;background:#0d0c0c;border-radius:2.2rem;">`}
             <div class="sbar"><span>9:41</span><span>${SIG}${WIFI}${BATT}</span></div><div class="island"></div>
           </div>
         </div></div>
@@ -604,6 +607,7 @@ cards.forEach(c => io.observe(c));
 // stacking: as the next card slides over, the one beneath settles back a little
 let ticking = false;
 function stackFx(){
+  if (window.innerWidth < 900) return;
   ticking = false;
   cards.forEach((c, i) => {
     const next = cards[i + 1]; let p = 0;
