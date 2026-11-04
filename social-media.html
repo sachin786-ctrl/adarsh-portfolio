@@ -339,7 +339,7 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
 </header>
 
 <main class="wrap">
-  <div class="top"><a class="chip" href="home.html#works">← Back to the doors</a></div>
+  <div class="top"><a class="chip" href="/#works">← Back to the doors</a></div>
   <section class="intro">
     <h1>Social Media</h1>
     <div><p>Creative visual campaigns, brand carousels, and design studies built to capture attention and communicate brand stories.</p></div>
@@ -358,10 +358,10 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
     </div>
     <div class="sf__cols">
       <div><h3>Work</h3><ul class="work"><li><a href="social-media.html" data-nav="door:0">Social Media</a></li><li><a href="ads-design.html" data-nav="door:1">Ads Design</a></li><li><a href="branding.html" data-nav="door:2">Branding</a></li><li><a href="typography.html" data-nav="door:3">Typography</a></li></ul></div>
-      <div><h3>Navigate</h3><ul><li><a href="home.html" data-nav="home">Home</a></li><li><a href="home.html#about" data-nav="about">My story</a></li><li><button data-nav="contact">Contact</button></li></ul></div>
+      <div><h3>Navigate</h3><ul><li><a href="/" data-nav="home">Home</a></li><li><a href="/#about" data-nav="about">My story</a></li><li><button data-nav="contact">Contact</button></li></ul></div>
       <div><h3>Status</h3><ul><li class="st">Available for work</li><li class="st">Remote-first, worldwide</li><li class="st">Local time <span data-ftime>—</span></li></ul></div>
     </div>
-    <div class="sf__bot"><span>© <span data-fyear>2026</span> Adarsh Singh. Designed and built by Rishi.</span><span class="sf__legal"><a href="../legal/" target="_top">Privacy &amp; credits</a></span><button data-nav="top">Back to top ↑</button></div>
+    <div class="sf__bot"><span>© <span data-fyear>2026</span> Adarsh Singh. Designed and built by Adarsh.</span><span class="sf__legal"><a href="/legal/" target="_top">Privacy &amp; credits</a></span><button data-nav="top">Back to top ↑</button></div>
   </div>
 </footer>
 </div>
@@ -369,12 +369,91 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
 
 <script>
 const PROJECTS = [
-  { kind: "Campaign & Identity", title: "NOTE — No Offence To Earth", sub: "Sustainable brand campaign", desc: "A purpose-driven identity and social campaign highlighting sustainable, eco-friendly product innovation and zero-waste design values.", tags: ["Brand Campaign", "Social Media", "Eco-friendly"], shot: "images/Note_6.jpeg", bg: "#0d3b25" },
-  { kind: "Design Brief", title: "Project Manmauji", sub: "Sustainable pen design brief", desc: "Design brief outlining NOTE's vision for ergonomically designed pens balancing sustainability with superior comfort and traditional Indian artistic roots.", tags: ["Design Strategy", "Brief", "Storytelling"], shot: "images/Note_5.jpg", bg: "#eef6f0" },
-  { kind: "Ideation & Sketches", title: "Ergonomic Form Sketches", sub: "Pen anatomy exploration", desc: "Exploratory hand sketches testing ergonomics, grip proportions, cap styling, and modular component breakdown.", tags: ["Concept Sketch", "Ergonomics", "Industrial Design"], shot: "images/Note_3.jpg", bg: "#eef6f0" },
-  { kind: "Technical Specification", title: "Component Anatomy", sub: "Exploded engineering diagrams", desc: "Detailed technical drawings with exact millimetre callouts for the circular, square, and hexagonal pen bodies, caps, and grips.", tags: ["Technical Drawing", "Dimensions", "Precision"], shot: "images/Note_4.jpg", bg: "#eef6f0" },
-  { kind: "Physical Modeling", title: "Material Prototyping", sub: "Hand-carved wood & bamboo study", desc: "Over twenty physical prototypes testing hand-feel, tactile feedback, and natural wood/bamboo material variations.", tags: ["Prototyping", "Sustainable Material", "Form Study"], shot: "images/Note_2.jpg", bg: "#eef6f0" },
-  { kind: "Final Showcase", title: "Final Concept 31/31", sub: "Completed design prototype", desc: "The definitive design direction chosen for production: refined multi-material barrel with ergonomic balance and precision tip.", tags: ["Final Concept", "Portfolio Showcase", "Production Ready"], shot: "images/Note_1.jpg", bg: "#eef6f0" }
+  {
+    "kind": "Luxury Jewellery • Brand Creative",
+    "title": "Golden Genius — Royal Heritage",
+    "sub": "Luxury jewellery social campaign",
+    "desc": "Premium social media creative designed for fine jewellery branding, blending regal burgundy tones with elegant serif typography.",
+    "tags": [
+      "Social Media",
+      "Luxury Branding",
+      "Ad Creative",
+      "Photoshop"
+    ],
+    "shot": "images/golden-genius-gold-necklace.jpg",
+    "bg": "#2b0811",
+    "note": "Social Campaign Creative"
+  },
+  {
+    "kind": "Fine Jewellery • Product Spotlight",
+    "title": "Golden Genius — Signature Bangles",
+    "sub": "Product-focused social post",
+    "desc": "Sophisticated social layout with focal product placement, bold messaging, and refined color harmony.",
+    "tags": [
+      "Product Showcase",
+      "Social Creative",
+      "Typography"
+    ],
+    "shot": "images/golden-genius-gold-bangles.jpg",
+    "bg": "#2b0811",
+    "note": "Editorial Social Asset"
+  },
+  {
+    "kind": "Modern Living • Architecture & Housing",
+    "title": "HD Craft — Safety-First Living",
+    "sub": "Modular construction social creative",
+    "desc": "Striking architectural visual highlighting fire-resistant materials and smart prefab homes with crisp informational layout.",
+    "tags": [
+      "Architecture",
+      "Prefab Design",
+      "Social Creative"
+    ],
+    "shot": "images/hdcraft-fire-resistant.jpg",
+    "bg": "#8a3c00",
+    "note": "Brand Social Asset"
+  },
+  {
+    "kind": "Modular Spaces • Brand Communication",
+    "title": "HD Craft — Modern Prefab Spaces",
+    "sub": "Lifestyle & construction campaign",
+    "desc": "Bilingual social creative communicating mobility, modern aesthetics, and rapid construction for contemporary container living.",
+    "tags": [
+      "Social Campaign",
+      "Modular Homes",
+      "Brand Visuals"
+    ],
+    "shot": "images/hdcraft-modular-living.jpg",
+    "bg": "#8a3c00",
+    "note": "Brand Campaign Asset"
+  },
+  {
+    "kind": "Automotive • Scrapping Campaign",
+    "title": "Motozo — Vintage Beetle Campaign",
+    "sub": "Vehicle scrap & buyback creative",
+    "desc": "High-contrast creative featuring classic vintage car imagery with bold Hindi messaging and official compliance credentials.",
+    "tags": [
+      "Automotive",
+      "Poster Design",
+      "Social Media"
+    ],
+    "shot": "images/motozo-garage-campaign.jpg",
+    "bg": "#16382c",
+    "note": "Automotive Social Post"
+  },
+  {
+    "kind": "Moment Marketing • Pop Culture Creative",
+    "title": "Motozo — Iconic Bollywood Campaign",
+    "sub": "High-engagement social post",
+    "desc": "Creative pop-culture social campaign leveraging iconic cinema references for maximum viewer recall and engagement.",
+    "tags": [
+      "Pop Culture",
+      "Illustration",
+      "Engagement Ad"
+    ],
+    "shot": "images/motozo-retro-ad.jpg",
+    "bg": "#16382c",
+    "note": "Moment Marketing Creative"
+  }
 ];
 const ARROW = '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -483,7 +562,7 @@ if (!reduced){ addEventListener('scroll', () => { if (!ticking){ ticking = true;
 (() => {
   const root = document.documentElement, EMBED = root.classList.contains('embed');
   if (!EMBED) return;
-  const back = [...document.querySelectorAll('a[href="home.html#works"]')];
+  const back = [...document.querySelectorAll('a[href="/#works"]')];
   back.forEach(b => b.addEventListener('click', e => { e.preventDefault(); parent.postMessage({ wall: 'close' }, location.origin === 'null' ? '*' : location.origin); }));
   addEventListener('keydown', e => { if (e.key === 'Escape') parent.postMessage({ wall: 'close' }, location.origin === 'null' ? '*' : location.origin); });
   addEventListener('message', e => {
@@ -623,7 +702,7 @@ if (!reduced){ addEventListener('scroll', () => { if (!ticking){ ticking = true;
 <script>
 (() => {
   const root = document.documentElement, EMBED = root.classList.contains('embed');
-  const HOME = 'home.html';
+  const HOME = '/';
   const SLUGS = ["social-media.html", "ads-design.html", "branding.html", "typography.html"];
   const go = to => {
     if (to === 'top'){ scrollTo({ top: 0, behavior: 'smooth' }); return; }

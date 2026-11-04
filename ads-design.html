@@ -347,7 +347,7 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
 </header>
 
 <main class="wrap">
-  <div class="top"><a class="chip" href="home.html#works">← Back to the doors</a></div>
+  <div class="top"><a class="chip" href="/#works">← Back to the doors</a></div>
   <section class="intro">
     <h1>Ads Design</h1>
     <div><p>High-converting advertising creatives, promotional designs, and visual marketing assets tailored for digital platforms.</p></div>
@@ -366,10 +366,10 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
     </div>
     <div class="sf__cols">
       <div><h3>Work</h3><ul class="work"><li><a href="social-media.html" data-nav="door:0">Social Media</a></li><li><a href="ads-design.html" data-nav="door:1">Ads Design</a></li><li><a href="branding.html" data-nav="door:2">Branding</a></li><li><a href="typography.html" data-nav="door:3">Typography</a></li></ul></div>
-      <div><h3>Navigate</h3><ul><li><a href="home.html" data-nav="home">Home</a></li><li><a href="home.html#about" data-nav="about">My story</a></li><li><button data-nav="contact">Contact</button></li></ul></div>
+      <div><h3>Navigate</h3><ul><li><a href="/" data-nav="home">Home</a></li><li><a href="/#about" data-nav="about">My story</a></li><li><button data-nav="contact">Contact</button></li></ul></div>
       <div><h3>Status</h3><ul><li class="st">Available for work</li><li class="st">Remote-first, worldwide</li><li class="st">Local time <span data-ftime>—</span></li></ul></div>
     </div>
-    <div class="sf__bot"><span>© <span data-fyear>2026</span> Adarsh Singh. Designed and built by Rishi.</span><span class="sf__legal"><a href="../legal/" target="_top">Privacy &amp; credits</a></span><button data-nav="top">Back to top ↑</button></div>
+    <div class="sf__bot"><span>© <span data-fyear>2026</span> Adarsh Singh. Designed and built by Adarsh.</span><span class="sf__legal"><a href="/legal/" target="_top">Privacy &amp; credits</a></span><button data-nav="top">Back to top ↑</button></div>
   </div>
 </footer>
 </div>
@@ -377,12 +377,90 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
 
 <script>
 const PROJECTS = [
-  { kind: "Motion Ads • After Effects", title: "Kinetic Motion Campaign", sub: "Commercial promo ad suite", desc: "Dynamic animation ads built in Adobe After Effects for high-conversion social ad campaigns, product reveals, and promotional marketing.", tags: ["Motion Graphics", "After Effects", "Commercial Ads"], icon: "images/h1.jpg", poster: "images/Visiting_Card_01.jpeg", note: "Motion Design Asset" },
-  { kind: "Video Ads • Premiere Pro", title: "Brand Video Commercial", sub: "Short-form video advertising", desc: "Engaging commercial edits crafted for Instagram Reels, YouTube Shorts and digital screens with seamless pacing and audio sync.", tags: ["Video Editing", "Reels & Shorts", "Color Grading"], icon: "images/h2.jpg", poster: "images/Visiting_Card_02.jpeg", note: "Video Production Asset" },
-  { kind: "Display Ads • Photoshop", title: "Visual Campaign Creatives", sub: "Omni-channel banner suite", desc: "High-resolution display advertising suites and performance marketing banners designed for maximum click-through rates.", tags: ["Display Ads", "Photoshop", "Ad Banners"], icon: "images/h4.jpg", poster: "images/Logofolio_01.jpg", note: "Digital Ad Asset" },
-  { kind: "Vector Identity • Illustrator", title: "Brand Promotion Graphics", sub: "Scalable advertising vectors", desc: "Crisp vector graphics, illustrated promotional layouts, and billboard-scale digital creative assets created in Illustrator.", tags: ["Vector Design", "Illustrator", "Brand Visuals"], icon: "images/Illustrator.png", poster: "images/Visiting_Card_05.jpeg", note: "Vector Graphic Asset" },
-  { kind: "Social Ads • Canva Pro", title: "Rapid Content Advertising", sub: "High-velocity campaign templates", desc: "Agile, responsive marketing collaterals and multi-platform promotional creatives designed for quick turnaround campaigns.", tags: ["Fast Turnaround", "Social Ads", "Multi-platform"], icon: "images/h3.jpg", poster: "images/Visiting_Card_06.jpeg", note: "Social Creative Asset" },
-  { kind: "Short Form • CapCut", title: "Mobile-First Video Ads", sub: "Viral promotional reels", desc: "Trendy mobile-optimized short videos featuring kinetic captions, pacing transitions, and audio-reactive effects.", tags: ["Shorts & Reels", "CapCut", "Viral Marketing"], icon: "images/Capcut.jpg", poster: "images/Logofolio_02.jpg", note: "Mobile Ad Asset" }
+  {
+    "kind": "Story Ads • Meta & Instagram",
+    "title": "Car Buyback Story Ad",
+    "sub": "Full-screen vertical story creative",
+    "desc": "High-conversion Instagram Story ad designed with clear benefit pills (Free Pickup, Instant Payment, Hassle-free RTO) and strong value proposition.",
+    "tags": [
+      "Instagram Story",
+      "Lead Gen",
+      "Performance Ad"
+    ],
+    "icon": "images/ad-car-buyback-feed.jpg",
+    "poster": "images/ad-car-buyback-story.jpg",
+    "note": "Story Ad Creative"
+  },
+  {
+    "kind": "Story Ads • Vertical Format",
+    "title": "Scrap Car Campaign Ad",
+    "sub": "9:16 vertical motion/static ad",
+    "desc": "Direct-response story ad highlighting scrap value up to ₹50,000 with trust badges and immediate visual contrast.",
+    "tags": [
+      "Vertical Ad",
+      "Story Format",
+      "Direct Response"
+    ],
+    "icon": "images/ad-scrap-car-feed.jpg",
+    "poster": "images/ad-scrap-car-story.jpg",
+    "note": "Mobile Story Asset"
+  },
+  {
+    "kind": "Feed Ads • Instagram & Facebook",
+    "title": "Car Buyback Square Feed Ad",
+    "sub": "1080×1080 social feed creative",
+    "desc": "Engineered for high CTR on social feeds with visual split, prominent pricing badge, and service trust features.",
+    "tags": [
+      "Feed Ad",
+      "Square Format",
+      "Conversion Ad"
+    ],
+    "icon": "images/ad-car-buyback-feed.jpg",
+    "poster": "images/ad-car-buyback-feed.jpg",
+    "note": "Feed Ad Creative"
+  },
+  {
+    "kind": "Feed Ads • Social Campaign",
+    "title": "Scrap Car Square Feed Ad",
+    "sub": "High-CTR social campaign asset",
+    "desc": "Clean green-themed performance ad tailored for Facebook and Instagram feeds, focusing on hassle-free car selling.",
+    "tags": [
+      "Meta Ads",
+      "Performance Ad",
+      "Social Feed"
+    ],
+    "icon": "images/ad-scrap-car-feed.jpg",
+    "poster": "images/ad-scrap-car-feed.jpg",
+    "note": "Feed Ad Asset"
+  },
+  {
+    "kind": "Display Ads • Google & Web Banners",
+    "title": "Scrap Car Web Display Banner",
+    "sub": "Landscape promotional banner",
+    "desc": "Wide-format web banner ad for remarketing and Google Display Network, optimized for readability across desktop and mobile.",
+    "tags": [
+      "Display Ads",
+      "Banner Creative",
+      "Web Ads"
+    ],
+    "icon": "images/ad-scrap-car-feed.jpg",
+    "poster": "images/ad-scrap-car-banner.jpg",
+    "note": "Display Ad Creative"
+  },
+  {
+    "kind": "Print & Digital Ads • Campaign",
+    "title": "Motozo Commercial Ad Campaign",
+    "sub": "Print & digital promotional ad",
+    "desc": "Multi-channel advertising layout combining editorial styling, retro vehicle art, and verified government scheme credentialing.",
+    "tags": [
+      "Campaign Ad",
+      "Digital Ad",
+      "Brand Marketing"
+    ],
+    "icon": "images/motozo-garage-campaign.jpg",
+    "poster": "images/motozo-garage-campaign.jpg",
+    "note": "Commercial Campaign Ad"
+  }
 ];
 const ARROW = '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 const SIG = '<svg aria-hidden="true" focusable="false" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>';
@@ -540,7 +618,7 @@ if (!reduced){ addEventListener('scroll', () => { if (!ticking){ ticking = true;
 (() => {
   const root = document.documentElement, EMBED = root.classList.contains('embed');
   if (!EMBED) return;
-  const back = [...document.querySelectorAll('a[href="home.html#works"]')];
+  const back = [...document.querySelectorAll('a[href="/#works"]')];
   back.forEach(b => b.addEventListener('click', e => { e.preventDefault(); parent.postMessage({ wall: 'close' }, location.origin === 'null' ? '*' : location.origin); }));
   addEventListener('keydown', e => { if (e.key === 'Escape') parent.postMessage({ wall: 'close' }, location.origin === 'null' ? '*' : location.origin); });
   addEventListener('message', e => {
@@ -680,7 +758,7 @@ if (!reduced){ addEventListener('scroll', () => { if (!ticking){ ticking = true;
 <script>
 (() => {
   const root = document.documentElement, EMBED = root.classList.contains('embed');
-  const HOME = 'home.html';
+  const HOME = '/';
   const SLUGS = ["social-media.html", "ads-design.html", "branding.html", "typography.html"];
   const go = to => {
     if (to === 'top'){ scrollTo({ top: 0, behavior: 'smooth' }); return; }
